@@ -229,10 +229,10 @@
                         <button id="openWarrantyModal" class="w-full font-bold text-xl text-emerald-400 hover:text-emerald-300 flex items-center justify-center focus:outline-none transition duration-200 group" aria-label="Abrir modal de garantía">
                             <!-- Icono de Check en Círculo -->
                             <svg class="w-6 h-6 mr-2 group-hover:rotate-12 transition duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                            Garantía de 1 Año
+                            Garantía de 3 Meses
                         </button>
                         <p class="mt-2 text-sm text-gray-300">
-                            Todas nuestras computadoras usadas incluyen <strong class="text-yellow-400">1 año de garantía por escrito</strong>. Haz clic para ver detalles.
+                            Todas nuestras computadoras usadas incluyen <strong class="text-yellow-400">3 meses de garantía por escrito</strong>. Haz clic para ver detalles.
                         </p>
                     </div>
                 </details>
@@ -245,8 +245,8 @@
         <div class="modal-content relative text-gray-900" onclick="event.stopPropagation()">
             <!-- Botón de Cierre -->
             <span class="close-button absolute top-4 right-6 text-gray-400 hover:text-gray-900" onclick="closeWarrantyModal(event)">&times;</span>
-            <h3 class="text-3xl font-bold text-emerald-600 mb-4 border-b pb-2">Garantía Escrita (1 Año)</h3>
-            <p class="mb-4 text-lg">Tu tranquilidad es lo más importante. Ofrecemos 1 año completo de garantía por escrito en todas nuestras computadoras usadas (CPU) por cualquier falla de hardware no causada por el usuario.</p>
+            <h3 class="text-3xl font-bold text-emerald-600 mb-4 border-b pb-2">Garantía Escrita (3 Meses)</h3>
+            <p class="mb-4 text-lg">Tu tranquilidad es lo más importante. Ofrecemos 3 meses completo de garantía por escrito en todas nuestras computadoras usadas (CPU) por cualquier falla de hardware no causada por el usuario.</p>
             <ul class="list-disc list-inside space-y-2 text-gray-700">
                 <li><strong class="font-semibold">Cobertura:</strong> Placa madre, procesador, memoria RAM, disco duro (HDD/SSD).</li>
                 <li><strong class="font-semibold">Exclusiones:</strong> Monitores, periféricos (teclado, mouse, etc.), fallas de software, virus o daños físicos/líquidos causados por el cliente.</li>
@@ -334,13 +334,13 @@
         // Array de productos. Se actualiza el software a Win 11 para la mayoría.
         const products = [
             // Combo 1 y 2 son Core2Duo (usan Win 10 por default)
-            { id: 1, title: "Combo Core2Duo", basePrice: 200000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/1.png", description: "El combo más económico, perfecto para tareas básicas como navegar por internet, usar redes sociales y trabajos escolares o de oficina livianos. Viene listo para usar con todo el software instalado.", specs: [ { name: "Procesador", value: "Intel Core2Duo (Ideal para tareas ligeras)" }, { name: "Memoria RAM", value: "4 GB" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 10, Office completo y Antivirus" } ], paymentLink: "https://mpago.la/2D7YX7e" },
-            { id: 2, title: "Combo Core2Duo 8GB", basePrice: 240000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/2.png", description: "Un salto en fluidez. Con 8GB de RAM, este combo es ideal para multitarea, manejar múltiples pestañas del navegador, estudiar online y usar programas intermedios de manera cómoda.", specs: [ { name: "Procesador", value: "Intel Core2Duo" }, { name: "Memoria RAM", value: "8 GB (Ideal para navegar y estudiar)" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 10, Office completo y Antivirus" } ], paymentLink: "https://mpago.la/2r8q4uS" },
+            { id: 1, title: "Combo Core2Duo", basePrice: 200000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/1.png", description: "El combo más económico, perfecto para tareas básicas como navegar por internet, usar redes sociales y trabajos escolares o de oficina livianos. Viene listo para usar con todo el software instalado.", specs: [ { name: "Procesador", value: "Intel Core2Duo (Ideal para tareas ligeras)" }, { name: "Memoria RAM", value: "4 GB" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 10, Office completo y Antivirus" }, { name: "Garantia", value: "3 Meses" } ], paymentLink: "https://mpago.la/2D7YX7e" },
+            { id: 2, title: "Combo Core2Duo 8GB", basePrice: 240000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/2.png", description: "Un salto en fluidez. Con 8GB de RAM, este combo es ideal para multitarea, manejar múltiples pestañas del navegador, estudiar online y usar programas intermedios de manera cómoda.", specs: [ { name: "Procesador", value: "Intel Core2Duo" }, { name: "Memoria RAM", value: "8 GB (Ideal para navegar y estudiar)" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 10, Office completo y Antivirus" }, { name: "Garantia", value: "3 Meses" } ], paymentLink: "https://mpago.la/2r8q4uS" },
             // Combos 3, 4, 5, 6, 7 son i3/i5
-            { id: 3, title: "Combo i3 8GB", basePrice: 270000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/3.png", description: "Potencia superior con procesador Intel i3. Excelente para quienes necesitan mayor velocidad de procesamiento y un rendimiento fiable para el trabajo y entretenimiento diario. Máximo valor por tu dinero.", specs: [ { name: "Procesador", value: "Intel i3 (Generación superior)" }, { name: "Memoria RAM", value: "8 GB" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 10, Office completo y Antivirus" } ], paymentLink: "https://mpago.la/1sf3Fqs" },
-            { id: 4, title: "Combo i3 16GB", basePrice: 300000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/4.png", description: "La mejor opción para el usuario avanzado. Los 16GB de RAM eliminan los cuellos de botella al trabajar con muchas aplicaciones abiertas, edición ligera o máquinas virtuales. Máxima fluidez garantizada.", specs: [ { name: "Procesador", value: "Intel i3" }, { name: "Memoria RAM", value: "16 GB (¡Máxima Fluidez!)" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 11, Office completo y Antivirus" } ], paymentLink: "https://mpago.la/1zKshDL" },
-            { id: 5, title: "Combo i5 8GB", basePrice: 320000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/5.png", description: "Potencia de Intel i5 para profesionales y estudiantes. Maneja software más demandante, bases de datos y tareas de diseño con facilidad. Incluye la última versión de Windows.", specs: [ { name: "Procesador", value: "Intel i5 (Potencia y Velocidad)" }, { name: "Memoria RAM", value: "8 GB" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 11, Office completo y Antivirus" } ], paymentLink: "https://mpago.la/1sf3Fqs" },
-            { id: 6, title: "Combo 030 (16GB/1TB)", basePrice: 360000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/6.png", description: "El combo de más alto rendimiento, diseñado para quienes no aceptan compromisos. Con 16GB de RAM y un procesador i5, es la máquina definitiva para multitarea intensa, desarrollo o edición multimedia. Gran almacenamiento.", specs: [ { name: "Procesador", value: "Intel i5" }, { name: "Memoria RAM", value: "16 GB (El más rápido)" }, { name: "Disco", value: "1 TB HDD (¡El doble de almacenamiento!)" }, { name: "Monitor", value: '17" LCD' }, { name: "Accesorios", value: "Teclado y mouse" }, { name: "Software", value: "Windows 11, Paquete Office completo" }, { name: "Garantia", value: "1 Año" } ], paymentLink: "https://mpago.la/1raZeQF" },
+            { id: 3, title: "Combo i3 8GB", basePrice: 270000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/3.png", description: "Potencia superior con procesador Intel i3. Excelente para quienes necesitan mayor velocidad de procesamiento y un rendimiento fiable para el trabajo y entretenimiento diario. Máximo valor por tu dinero.", specs: [ { name: "Procesador", value: "Intel i3 (Generación superior)" }, { name: "Memoria RAM", value: "8 GB" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 10, Office completo y Antivirus" }, { name: "Garantia", value: "3 Meses" } ], paymentLink: "https://mpago.la/1sf3Fqs" },
+            { id: 4, title: "Combo i3 16GB", basePrice: 300000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/4.png", description: "La mejor opción para el usuario avanzado. Los 16GB de RAM eliminan los cuellos de botella al trabajar con muchas aplicaciones abiertas, edición ligera o máquinas virtuales. Máxima fluidez garantizada.", specs: [ { name: "Procesador", value: "Intel i3" }, { name: "Memoria RAM", value: "16 GB (¡Máxima Fluidez!)" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 11, Office completo y Antivirus" }, { name: "Garantia", value: "3 Meses" } ], paymentLink: "https://mpago.la/1zKshDL" },
+            { id: 5, title: "Combo i5 8GB", basePrice: 320000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/5.png", description: "Potencia de Intel i5 para profesionales y estudiantes. Maneja software más demandante, bases de datos y tareas de diseño con facilidad. Incluye la última versión de Windows.", specs: [ { name: "Procesador", value: "Intel i5 (Potencia y Velocidad)" }, { name: "Memoria RAM", value: "8 GB" }, { name: "Disco", value: "500 GB HDD" }, { name: "Monitor", value: '17" LCD' }, { name: "Software", value: "Win 11, Office completo y Antivirus" }, { name: "Garantia", value: "3 Meses" } ], paymentLink: "https://mpago.la/1sf3Fqs" },
+            { id: 6, title: "Combo 030 (16GB/1TB)", basePrice: 360000, imageUrl: "https://raw.githubusercontent.com/arielg86/compuya/main/6.png", description: "El combo de más alto rendimiento, diseñado para quienes no aceptan compromisos. Con 16GB de RAM y un procesador i5, es la máquina definitiva para multitarea intensa, desarrollo o edición multimedia. Gran almacenamiento.", specs: [ { name: "Procesador", value: "Intel i5" }, { name: "Memoria RAM", value: "16 GB (El más rápido)" }, { name: "Disco", value: "1 TB HDD (¡El doble de almacenamiento!)" }, { name: "Monitor", value: '17" LCD' }, { name: "Accesorios", value: "Teclado y mouse" }, { name: "Software", value: "Windows 11, Paquete Office completo" }, { name: "Garantia", value: "3 Meses" } ], paymentLink: "https://mpago.la/1raZeQF" },
             {
                 id: 7,
                 title: "Combo i5 SSD 16GB (19\")",
@@ -352,7 +352,8 @@
                     { name: "Memoria RAM", value: "16 GB (Máxima multitarea)" },
                     { name: "Disco", value: "256 GB SSD (Inicio y carga ultra rápida)" },
                     { name: "Monitor", value: '19" (Más grande)' },
-                    { name: "Software", value: "Win 11, Office completo y Antivirus" }
+                    { name: "Software", value: "Win 11, Office completo y Antivirus" },
+                    { name: "Garantia", value: "3 Meses" }
                 ],
                 paymentLink: "https://mpago.la/2UQbZKW"
             }
@@ -614,7 +615,7 @@
                     <img
                         src="${product.imageUrl}"
                         alt="${product.title}"
-                        class="w-full h-48 object-cover rounded"
+                        class="w-full h-64 object-contain rounded"
                         onerror="this.onerror=null;this.src='${imagePlaceholder}';"
                     />
                     <div class="absolute top-2 left-2 bg-green-600 text-white text-xs px-2 py-1 rounded font-bold">
@@ -902,7 +903,7 @@
                         </div>
                         <div class="text-sm text-gray-600 space-y-1">
                             <div>✓ Entrega a domicilio incluida</div>
-                            <div>✓ Garantía de 1 año</div>
+                            <div>✓ Garantía de 3 meses</div>
                             <div>✓ Pago contra entrega disponible</div>
                         </div>
                     </div>
@@ -947,7 +948,7 @@
                             </div>
                             <div class="bg-gray-50 rounded-lg p-4">
                                 <div class="font-medium text-gray-900 mb-1">¿Qué garantía tiene?</div>
-                                <div class="text-gray-700 text-sm">Todos nuestros combos tienen 1 año de garantía por escrito.</div>
+                                <div class="text-gray-700 text-sm">Todos nuestros combos tienen 3 meses de garantía por escrito.</div>
                             </div>
                         </div>
                         <button class="mt-3 text-blue-600 hover:text-blue-800 font-medium" onclick="openWhatsApp('Quiero consultar sobre el combo ${product.title}')">
