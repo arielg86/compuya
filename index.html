@@ -288,7 +288,12 @@
                     <label for="telefono" class="block text-sm font-medium text-gray-700">Teléfono:</label>
                     <input type="tel" id="telefono" name="telefono" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
                 </div>
-                <button type="button" id="payButton" class="w-full bg-green-600 text-white font-bold py-3 rounded-lg hover:bg-green-700 transition duration-200">Pagar</button>
+                <button type="button" id="payButton" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition duration-200 flex items-center justify-center">
+                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-1.1 5H19M7 13l-1.1 5M7 13l1.1-5"></path>
+                    </svg>
+                    Consultar por WhatsApp
+                </button>
             </form>
         </div>
     </div>
@@ -402,8 +407,17 @@
         function openPurchaseModal(product) {
             currentProduct = product;
             purchaseModal.classList.add('show');
-            // Configurar el botón de pago con el enlace del producto
-            document.getElementById('payButton').onclick = () => window.location.href = currentProduct.paymentLink;
+            // Configurar el botón de WhatsApp con los datos del formulario
+            document.getElementById('payButton').onclick = () => {
+                const nombre = document.getElementById('nombre').value;
+                const dni = document.getElementById('dni').value;
+                const direccion = document.getElementById('direccion').value;
+                const codigo_postal = document.getElementById('codigo_postal').value;
+                const email = document.getElementById('email').value;
+                const telefono = document.getElementById('telefono').value;
+                const message = `Hola, quiero procesar mi pedido para el ${currentProduct.title}. Datos: Nombre: ${nombre}, DNI: ${dni}, Dirección: ${direccion}, Código Postal: ${codigo_postal}, Email: ${email}, Teléfono: ${telefono}.`;
+                openWhatsApp(message);
+            };
         }
 
         /**
